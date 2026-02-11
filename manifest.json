@@ -1,20 +1,21 @@
 {
-  "name": "Billetera Emprendedor Pro",
+  "name": "Billetera Pro - Gestión de Gastos",
   "short_name": "Billetera",
-  "start_url": ".",
+  "description": "Aplicación profesional para gestión de ingresos y egresos",
+  "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#020617",
-  "theme_color": "#020617",
+  "background_color": "#000000",
+  "theme_color": "#000000",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "icon.png",
+      "src": "https://cdn-icons-png.flaticon.com/512/10438/10438515.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "icon.png",
+      "src": "https://cdn-icons-png.flaticon.com/512/10438/10438515.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
