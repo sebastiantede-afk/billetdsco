@@ -1,19 +1,25 @@
-const CACHE_NAME = 'billetera-v1';
-const ASSETS = [
+const CACHE_NAME = 'billetera-v3-cache';
+const assets = [
   './',
   './index.html',
   './manifest.json',
-  './icon.png'
+  'https://cdn.tailwindcss.com'
 ];
 
-self.addEventListener('install', (e) => {
+// Instalación
+self.addEventListener('install', e => {
   e.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS))
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll(assets);
+    })
   );
 });
 
-self.addEventListener('fetch', (e) => {
+// Estrategia: Cache First, luego Network
+self.addEventListener('fetch', e => {
   e.respondWith(
-    caches.match(e.request).then((res) => res || fetch(e.request))
+    caches.match(e.request).then(response => {
+      return response || fetch(e.request);
+    })
   );
 });
